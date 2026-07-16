@@ -101,10 +101,10 @@ export default function TechnicalTable({ standardsData }: TechnicalTableProps) {
                 filteredData.map((row, i) => (
                   <motion.tr
                     key={row.std}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ type: 'spring', stiffness: 100, damping: 15, delay: i * 0.04 }}
                     className="hover:bg-white/2 transition-colors duration-200"
                   >
                     <td className="py-5 px-6">

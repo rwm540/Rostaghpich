@@ -11,6 +11,7 @@ import FastenerSimulator from './components/FastenerSimulator';
 import InquiryForm from './components/InquiryForm';
 import Footer from './components/Footer';
 import ThemeSelector from './components/ThemeSelector';
+import ChatWidget from './components/ChatWidget';
 import AdminDashboard from './components/AdminDashboard';
 import { SiteData, getSiteData, saveSiteData } from './lib/siteData';
 
@@ -75,6 +76,9 @@ export default function App() {
 
       {/* Floating Theme Selection Panel for Visual Customization */}
       <ThemeSelector />
+
+      {/* Premium Engineering AI consultation chat widget */}
+      <ChatWidget />
 
       <AdminDashboard 
         isOpen={isAdminOpen} 

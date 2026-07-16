@@ -225,40 +225,43 @@ export default function AdminDashboard({ isOpen, onClose, onDataChange }: AdminD
         className="relative w-full max-w-5xl h-full bg-gray-950 border-r border-gray-900 flex flex-col z-10 text-right shadow-2xl"
       >
         {/* Panel Header */}
-        <div className="p-6 border-b border-gray-900 bg-gray-950/80 backdrop-blur flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500">
-              <Settings className="animate-spin duration-10000" size={20} />
+        <div className="p-4 md:p-6 border-b border-gray-900 bg-gray-950/80 backdrop-blur flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-3">
+          <div className="flex items-center gap-2.5 md:gap-3 w-full sm:w-auto">
+            <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 shrink-0">
+              <Settings className="animate-spin duration-10000" size={18} />
             </div>
-            <div>
-              <h2 className="text-xl font-black text-white">پنل کاربری و مدیریت پویا</h2>
-              <p className="text-xs text-gray-400 font-mono">Dynamic Content Management Studio</p>
+            <div className="min-w-0">
+              <h2 className="text-sm md:text-xl font-black text-white truncate">پنل مدیریت محتوا</h2>
+              <p className="text-[10px] md:text-xs text-gray-500 font-mono truncate hidden xs:block">Management Studio</p>
             </div>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3 w-full sm:w-auto justify-end">
             <button 
               onClick={handleResetToDefault}
-              className="flex items-center gap-1 px-3 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-500 hover:text-white rounded-xl text-xs font-bold transition-all"
+              className="flex items-center gap-1.5 px-3 py-2 bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-500 hover:text-white rounded-xl text-xs font-bold transition-all cursor-pointer"
               title="بازگشت به حالت کارخانه"
             >
               <RotateCcw size={14} />
-              <span>ریست کارخانه</span>
+              <span className="hidden sm:inline">ریست کارخانه</span>
+              <span className="inline sm:hidden">ریست</span>
             </button>
 
             <button 
               onClick={() => handleSaveAll(data)}
-              className="flex items-center gap-2 px-5 py-2 bg-orange-600 hover:bg-orange-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-orange-900/30 transition-all border border-orange-500/20"
+              className="flex items-center gap-1.5 px-3 py-2 bg-orange-600 hover:bg-orange-500 text-white rounded-xl text-xs font-bold shadow-lg shadow-orange-950/40 transition-all border border-orange-500/20 cursor-pointer"
             >
               <Save size={14} />
-              <span>ذخیره نهایی محتوا</span>
+              <span className="hidden sm:inline">ذخیره نهایی محتوا</span>
+              <span className="inline sm:hidden">ذخیره</span>
             </button>
 
             <button 
               onClick={onClose}
-              className="p-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-400 hover:text-white rounded-xl transition-all"
+              className="p-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-400 hover:text-white rounded-xl transition-all cursor-pointer shrink-0"
+              title="بستن پنل"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           </div>
         </div>

@@ -86,10 +86,10 @@ export default function ProductCatalog({ productsData }: ProductCatalogProps) {
             return (
               <motion.div
                 key={p.id || i}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ type: 'spring', stiffness: 70, damping: 15, delay: i * 0.1 }}
                 className="group relative rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-800/60 hover:border-primary/30 p-8 md:p-10 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-xl"
               >
                 {/* Glow ambient background effect */}
