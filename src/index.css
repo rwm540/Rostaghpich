@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", sans-serif;
+  --color-primary: var(--primary, #f97316);
+  --color-primary-hover: var(--primary-hover, #ea580c);
+  --color-primary-glow: var(--primary-glow, rgba(249, 115, 22, 0.15));
+}
+
+body, html, button, input, select, textarea, span, p, h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Vazirmatn', sans-serif !important;
+}
+
+.theme-transition * {
+  transition: background-color 0.4s ease, border-color 0.4s ease, text-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+}
+
+/* Custom scrollbar styling matching the current color theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712; /* dark slate background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary, #f97316);
+  border-radius: 9999px;
+  border: 3px solid #030712;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover, #ea580c);
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary, #f97316) #030712;
+}
